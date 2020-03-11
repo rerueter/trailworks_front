@@ -10,7 +10,7 @@ class App extends React.Component {
   logout = () => {
     localStorage.removeItem("uid");
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/auth/logout`, {
+      .delete(`${process.env.REACT_APP_API}/auth/logout`, {
         withCredentials: true
       })
       .then(res => {

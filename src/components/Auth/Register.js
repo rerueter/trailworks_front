@@ -33,7 +33,7 @@ class Register extends React.Component {
     event.persist();
     console.table(this.state);
     axios
-      .post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
+      .post(`${process.env.REACT_APP_API}/auth/register`, this.state)
       .then(res => {
         console.log(res);
         this.props.history.push("/login");

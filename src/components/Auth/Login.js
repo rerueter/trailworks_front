@@ -18,7 +18,7 @@ class Login extends React.Component {
     event.persist();
     console.table(this.state);
     axios
-      .post(`${process.env.REACT_APP_API_URL}/auth/login`, this.state, {
+      .post(`${process.env.REACT_APP_API}/auth/login`, this.state, {
         withCredentials: true
       })
       .then(res => {
@@ -49,7 +49,7 @@ class Login extends React.Component {
               name="password"
               label="password"
               type="password"
-              placeholder="your your password"
+              placeholder="your password"
               onChange={this.handleChange}
             />
           </Form.Field>
