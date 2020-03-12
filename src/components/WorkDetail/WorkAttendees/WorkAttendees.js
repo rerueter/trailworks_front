@@ -31,7 +31,7 @@ class WorkAttendees extends React.Component {
   render() {
     return (
       <Segment>
-        <h1>{this.props.id}</h1>
+        <h1>Attendees</h1>
         {this.displayAttendees(this.state.attendees)}
       </Segment>
     );

@@ -12,7 +12,8 @@ import WorkAttendees from "./WorkAttendees/WorkAttendees";
 class WorkDetail extends React.Component {
   state = {
     work: null,
-    editing: false
+    editing: false,
+    deleting: false
   };
 
   getWork = () => {
@@ -57,6 +58,10 @@ class WorkDetail extends React.Component {
     this.setState({ editing: !this.state.editing });
     console.log(this.state.editing);
   };
+  handleDelete = () => {
+    this.setState({ deleting: !this.state.deleting });
+    console.log(this.state.deleting);
+  };
   deleteWork = () => {
     axios
       .delete(
@@ -98,6 +103,7 @@ class WorkDetail extends React.Component {
             <h3>Description:</h3>
             <h3>{this.state.work.description}</h3>
             <Divider />
+
             {!this.state.editing ? null : (
               <WorkUpdate
                 handleEdit={this.handleEdit}
@@ -105,8 +111,14 @@ class WorkDetail extends React.Component {
                 work={this.state.work}
               />
             )}
+            {!this.state.deleting ? null : (
+              <WorkDelete
+                handleDelete={this.handleDelete}
+                deleteWork={this.deleteWork}
+              />
+            )}
 
-            {!this.state.editing ? (
+            {!this.state.editing && !this.state.deleting ? (
               this.state.work.attendees.includes(
                 localStorage.getItem("uid")
               ) ? (
@@ -127,10 +139,11 @@ class WorkDetail extends React.Component {
             ) : null}
 
             {this.state.work.creator === localStorage.getItem("uid") &&
-            !this.state.editing ? (
+            !this.state.editing &&
+            !this.state.deleting ? (
               <Button.Group floated="right">
                 <Button onClick={this.handleEdit}>Edit Work</Button>
-                <Button onClick={this.deleteWork}>Delete Work</Button>
+                <Button onClick={this.handleDelete}>Delete Work</Button>
               </Button.Group>
             ) : null}
           </Segment>

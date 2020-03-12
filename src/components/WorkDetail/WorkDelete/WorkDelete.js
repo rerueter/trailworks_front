@@ -1,25 +1,22 @@
 import React from "react";
-import { Button, Header, Image, Modal } from "semantic-ui-react";
+import { Button, Icon, Header } from "semantic-ui-react";
 
-const ModalModalExample = props => (
-  <Modal trigger={<Button>Show Modal</Button>}>
-    <Modal.Header>Select a Photo</Modal.Header>
-    <Modal.Content image>
-      <Image
-        wrapped
-        size="medium"
-        src="https://react.semantic-ui.com/images/avatar/large/rachel.png"
-      />
-      <Modal.Description>
-        <Header>Default Profile Image</Header>
-        <p>
-          We've found the following gravatar image associated with your e-mail
-          address.
-        </p>
-        <p>Is it okay to use this photo?</p>
-      </Modal.Description>
-    </Modal.Content>
-  </Modal>
-);
+const WorkDelete = props => {
+  return (
+    <>
+      <Header as="h2">
+        <Icon name="warning sign" />
 
-export default ModalModalExample;
+        <Header.Content>Are you sure?</Header.Content>
+      </Header>
+      <Button.Group fluid>
+        <Button color="red" onClick={props.deleteWork}>
+          Delete
+        </Button>
+        <Button onClick={props.handleDelete}>Cancel</Button>
+      </Button.Group>
+    </>
+  );
+};
+
+export default WorkDelete;

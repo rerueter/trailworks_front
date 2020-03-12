@@ -20,7 +20,7 @@ const NavBar = props => {
     props.history.push("/");
   };
   return (
-    <section id="brand" className="nav">
+    <section id="nav" className="nav">
       <Header onClick={toHome} as="h1">
         <Icon name="spoon" />
         <Header.Content id="sub-brand">

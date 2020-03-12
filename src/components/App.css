@@ -13,19 +13,20 @@ body {
 h1 {
   margin: 0px;
 }
-.nav {
+#nav {
+  height: 75px;
+  box-sizing: border-box;
   display: flex;
   align-content: center;
   /* justify-items: center; */
   justify-content: space-between;
   background-color: var(--ctrst);
-  padding: 0px 20px 0px 10px;
+  padding: 10px 20px 10px 10px;
   border-radius: 5px;
 }
-#brand {
-  cursor: pointer;
-}
+
 #sub-brand {
+  cursor: pointer;
   font-family: "Permanent Marker", cursive;
   font-size: 1.5em;
   padding-top: 15px;

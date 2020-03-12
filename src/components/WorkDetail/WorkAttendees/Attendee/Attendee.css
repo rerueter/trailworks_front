@@ -1,0 +1,13 @@
+:root {
+  --fg: #f9f8eb;
+  --bg: #76b39d;
+  --dk: #155263;
+  --ctrst: #f0b917;
+}
+h4 {
+  background-color: var(--ctrst);
+  margin: 5px;
+}
+h5 {
+  margin: 5px;
+}
