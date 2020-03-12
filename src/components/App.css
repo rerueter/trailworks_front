@@ -8,3 +8,7 @@ body {
   /* justify-items: center; */
   justify-content: space-between;
 }
+
+h1 {
+  margin: 0px;
+}

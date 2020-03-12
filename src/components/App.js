@@ -4,7 +4,7 @@ import "./App.css";
 import Routes from "../config/routes";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { Segment, Button } from "semantic-ui-react";
+import { Segment, Button, Icon, Header } from "semantic-ui-react";
 
 class App extends React.Component {
   state = { currentUser: localStorage.getItem("uid") };
@@ -31,23 +31,29 @@ class App extends React.Component {
     return (
       <>
         <Segment className="nav-temp">
-          <h1>trailworks</h1>
+          <Header as="h1">
+            <Icon name="spoon" />
+            <Header.Content>
+              trailworks
+              <Header.Subheader>Go Dig!</Header.Subheader>
+            </Header.Content>
+          </Header>
           <h1>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>home</Link>
           </h1>
           <h1>
-            <Link to={"/login"}>Login</Link>
+            <Link to={"/login"}>login</Link>
           </h1>
           <h1>
-            <Link to={"/register"}>Register</Link>
+            <Link to={"/register"}>register</Link>
           </h1>
           <h1>
-            <Link to={"/newwork"}>New Work</Link>
+            <Link to={"/newwork"}>new work</Link>
           </h1>
           <h1>
-            <Link to={"/profile"}>Profile</Link>
+            <Link to={"/profile"}>profile</Link>
           </h1>
-          <Button onClick={this.logout}>Log Out</Button>
+          <Button onClick={this.logout}>log out</Button>
         </Segment>
 
         <Routes setCurrentUser={this.setCurrentUser} />

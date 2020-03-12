@@ -160,7 +160,7 @@ class Register extends React.Component {
           </Form.Field>
           <Form.Checkbox label="Admin" onClick={this.handleCheck} />
 
-          <Button type="submit" onClick={this.handleSubmit}>
+          <Button fluid type="submit" onClick={this.handleSubmit}>
             Register
           </Button>
         </Form>

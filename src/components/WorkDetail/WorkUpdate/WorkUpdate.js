@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Divider, Form, Button, Segment } from "semantic-ui-react";
+import { Divider, Form, Button } from "semantic-ui-react";
 
 import SemanticDatepicker from "react-semantic-ui-datepickers";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";

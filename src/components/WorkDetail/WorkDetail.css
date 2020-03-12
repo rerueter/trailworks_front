@@ -1,4 +1,8 @@
 .date-location-time {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+}
+h3 {
+  margin: 0px 10px;
 }

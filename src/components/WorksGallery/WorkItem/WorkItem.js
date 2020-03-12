@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Segment } from "semantic-ui-react";
 
 const WorkItem = props => {
-  const { _id, title, description, attendees, date, location } = props.work;
+  const { _id, title, description, attendees } = props.work;
   return (
     <Segment>
       <h1>

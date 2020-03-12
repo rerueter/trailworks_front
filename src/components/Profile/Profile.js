@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Segment, Button } from "semantic-ui-react";
+import { Segment, Header, Button } from "semantic-ui-react";
 
 class Profile extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class Profile extends React.Component {
   render() {
     return (
       <Segment>
-        <h1> {`howdy ${this.state.user.name}`}</h1>
+        <Header> {`howdy ${this.state.user.name}`}</Header>
       </Segment>
     );
   }

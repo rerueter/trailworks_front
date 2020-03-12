@@ -3,9 +3,10 @@ import axios from "axios";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import "./WorkDetail.css";
-import { Segment, Form, Button, Divider } from "semantic-ui-react";
+import { Segment, Button, Divider, Header } from "semantic-ui-react";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 import WorkUpdate from "./WorkUpdate/WorkUpdate";
+import WorkDelete from "./WorkDelete/WorkDelete";
 
 class WorkDetail extends React.Component {
   state = {
@@ -77,10 +78,14 @@ class WorkDetail extends React.Component {
     return (
       this.state.work && (
         <Segment>
-          <h1>{this.state.work.title}</h1>
-          <Button>
-            <Link to={"/"}>Back</Link>
-          </Button>
+          <Header as="h1">
+            <Header.Content>{this.state.work.title}</Header.Content>
+            <Header.Content>
+              <Button>
+                <Link to={"/"}>Back</Link>
+              </Button>
+            </Header.Content>
+          </Header>
           <Divider />
           <div className="date-location-time">
             <h3>
