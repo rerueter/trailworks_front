@@ -16,18 +16,18 @@ const NavBar = props => {
   const toLogin = () => {
     props.history.push("/login");
   };
+  const toHome = () => {
+    props.history.push("/");
+  };
   return (
-    <section className="nav-temp">
-      <Header as="h1">
+    <section id="brand" className="nav">
+      <Header onClick={toHome} as="h1">
         <Icon name="spoon" />
-        <Header.Content id="brand">
+        <Header.Content id="sub-brand">
           trailworks
           <Header.Subheader>Go Dig!</Header.Subheader>
         </Header.Content>
       </Header>
-      <h1>
-        <Link to={"/"}>trailwork</Link>
-      </h1>
 
       {props.currentUser ? (
         <Button.Group>

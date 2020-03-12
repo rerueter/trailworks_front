@@ -11,8 +11,8 @@ const WorksGallery = props => {
   };
 
   return (
-    <Segment>
-      <h1>It's a Gallery</h1>
+    <Segment id="works-gallery">
+      <h2>Current Trailwork Projects</h2>
       {displayItems(works)}
     </Segment>
   );

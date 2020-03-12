@@ -8,22 +8,28 @@
 
 body {
   padding: 10px 20px;
-  background-color: var(--bg);
+  background-color: var(--dk);
 }
 h1 {
   margin: 0px;
 }
-.nav-temp {
+.nav {
   display: flex;
   align-content: center;
   /* justify-items: center; */
   justify-content: space-between;
   background-color: var(--ctrst);
-  padding: 10px;
+  padding: 0px 20px 0px 10px;
   border-radius: 5px;
 }
 #brand {
+  cursor: pointer;
+}
+#sub-brand {
   font-family: "Permanent Marker", cursive;
   font-size: 1.5em;
   padding-top: 15px;
+}
+#works-gallery {
+  margin-top: 14px;
 }

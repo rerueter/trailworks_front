@@ -47,7 +47,6 @@ class WorkUpdate extends React.Component {
   render() {
     return (
       <Form>
-        <Divider />
         <Form.Field>
           <Form.Input
             name="title"
