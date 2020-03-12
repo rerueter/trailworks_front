@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { Header, Form, Button, Segment } from "semantic-ui-react";
+import { Form, Button, Segment } from "semantic-ui-react";
+
 import SemanticDatepicker from "react-semantic-ui-datepickers";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 import axios from "axios";
@@ -31,7 +32,7 @@ class NewWork extends React.Component {
     event.persist();
     console.table(this.state);
     axios
-      .post(`${process.env.API}/works`, this.state, {
+      .post(`${process.env.REACT_APP_API}/works`, this.state, {
         withCredentials: true
       })
       .then(res => {

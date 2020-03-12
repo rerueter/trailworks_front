@@ -1,0 +1,4 @@
+.date-location-time {
+  display: flex;
+  flex-direction: row;
+}

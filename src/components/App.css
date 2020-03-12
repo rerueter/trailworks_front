@@ -1,3 +1,10 @@
 body {
   padding: 10px 20px;
+  background-color: #326765;
+}
+.nav-temp {
+  display: flex;
+  align-content: center;
+  /* justify-items: center; */
+  justify-content: space-between;
 }
