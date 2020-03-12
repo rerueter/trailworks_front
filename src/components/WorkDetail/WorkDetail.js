@@ -96,9 +96,7 @@ class WorkDetail extends React.Component {
           </div>
           <h3>{this.state.work.description}</h3>
           <Divider />
-          {!this.state.editing ? (
-            <h1>eyy no edits</h1>
-          ) : (
+          {!this.state.editing ? null : (
             <WorkUpdate
               handleEdit={this.handleEdit}
               getWork={this.getWork}
@@ -106,25 +104,26 @@ class WorkDetail extends React.Component {
             />
           )}
 
-          {this.state.work.attendees.includes(localStorage.getItem("uid")) ? (
-            <Button color="red" onClick={this.leaveWork}>
-              Leave Work
-            </Button>
-          ) : (
-            <Button color="green" onClick={this.joinWork}>
-              Join Work
-            </Button>
-          )}
+          {!this.state.editing ? (
+            this.state.work.attendees.includes(localStorage.getItem("uid")) ? (
+              <Button color="red" onClick={this.leaveWork}>
+                Leave Work
+              </Button>
+            ) : (
+              <Button color="green" onClick={this.joinWork}>
+                Join Work
+              </Button>
+            )
+          ) : null}
 
-          {this.state.work.creator === localStorage.getItem("uid") ? (
+          {this.state.work.creator === localStorage.getItem("uid") &&
+          !this.state.editing ? (
             <Button.Group>
               <Button onClick={this.handleEdit}>Edit Work</Button>
               <Button onClick={this.getWork}>View Attendees</Button>
               <Button onClick={this.deleteWork}>Delete Work</Button>
             </Button.Group>
-          ) : (
-            <div></div>
-          )}
+          ) : null}
         </Segment>
       )
     );

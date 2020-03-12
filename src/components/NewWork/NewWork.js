@@ -37,6 +37,7 @@ class NewWork extends React.Component {
       })
       .then(res => {
         console.log(res);
+        this.props.history.push(`/works/${res.data._id}`);
       })
       .catch(err => console.log(err.response));
   };

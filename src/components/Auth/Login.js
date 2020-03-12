@@ -24,6 +24,7 @@ class Login extends React.Component {
       .then(res => {
         console.log(res);
         this.props.setCurrentUser(res.data.data);
+        this.props.history.push("/profile");
       })
       .catch(err => console.log(err.response));
   };
