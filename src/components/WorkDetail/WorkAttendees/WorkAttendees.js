@@ -28,6 +28,7 @@ class WorkAttendees extends React.Component {
   componentDidMount() {
     this.getAttendees();
   }
+
   render() {
     return (
       <Segment>

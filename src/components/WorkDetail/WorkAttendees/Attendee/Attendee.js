@@ -3,15 +3,17 @@ import { Segment, Divider } from "semantic-ui-react";
 import "./Attendee.css";
 
 const Attendee = props => {
-  const { name, email, tel, ecName, ecRel, ecTel } = props.info;
+  const { name, email, tel, emi, ecName, ecRel, ecTel } = props.info;
   return (
-    <Segment>
+    <Segment className="attendee">
       <h4>{name}</h4>
       <h5>{email}</h5>
       <h5>
         Phone:{"  "}
         <a href={`tel:${tel}`}>{tel}</a>
       </h5>
+      <Divider />
+      <h5>Medical Conditions: {emi}</h5>
       <Divider />
       <h5>Emergency Contact Name: {ecName}</h5>
       <h5>Relationship: {ecRel}</h5>

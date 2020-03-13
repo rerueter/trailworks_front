@@ -4,7 +4,8 @@
   --dk: #155263;
   --ctrst: #f0b917;
 }
-h4 {
+
+.attendee h4 {
   background-color: var(--ctrst);
   margin: 5px;
 }

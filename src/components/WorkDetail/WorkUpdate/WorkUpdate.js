@@ -11,7 +11,7 @@ class WorkUpdate extends React.Component {
     work: this.props.work,
     title: this.props.work.title,
     description: this.props.work.description,
-    location: this.props.work.description,
+    location: this.props.work.location,
     date: this.props.work.date,
     time: this.props.work.time,
     image: this.props.work.image

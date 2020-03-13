@@ -4,7 +4,7 @@ import { Button, Icon, Header } from "semantic-ui-react";
 const WorkDelete = props => {
   return (
     <>
-      <Header as="h2">
+      <Header className="warn" as="h2">
         <Icon name="warning sign" />
 
         <Header.Content>Are you sure?</Header.Content>

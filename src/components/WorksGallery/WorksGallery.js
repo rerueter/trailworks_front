@@ -1,6 +1,6 @@
 import React from "react";
 import WorkItem from "./WorkItem/WorkItem";
-import { Segment } from "semantic-ui-react";
+import { Segment, Divider } from "semantic-ui-react";
 
 const WorksGallery = props => {
   const { works } = props;
@@ -13,6 +13,7 @@ const WorksGallery = props => {
   return (
     <Segment id="works-gallery">
       <h2>Current Trailwork Projects</h2>
+      <Divider style={{ marginBottom: 0 }} />
       {displayItems(works)}
     </Segment>
   );

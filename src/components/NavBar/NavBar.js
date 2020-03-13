@@ -20,15 +20,13 @@ const NavBar = props => {
     props.history.push("/");
   };
   return (
-    <section id="nav" className="nav">
-      <Header onClick={toHome} as="h1">
-        <Icon name="spoon" />
+    <section id="nav">
+      <Header id="brand" onClick={toHome} as="h1">
         <Header.Content id="sub-brand">
           trailworks
           <Header.Subheader>Go Dig!</Header.Subheader>
         </Header.Content>
       </Header>
-
       {props.currentUser ? (
         <Button.Group>
           <Button onClick={toNewWork}>create trailwork</Button>
@@ -38,7 +36,6 @@ const NavBar = props => {
       ) : (
         <Button.Group>
           <Button onClick={toRegister}>sign up</Button>
-
           <Button onClick={toLogin}>log in</Button>
         </Button.Group>
       )}

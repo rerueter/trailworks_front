@@ -13,18 +13,41 @@ body {
 h1 {
   margin: 0px;
 }
+.work-item h4 {
+  margin: 5px 0px 0px;
+  padding: 0px 5px;
+}
+.title {
+  color: var(--ctrst);
+  background-color: var(--ctrst);
+  padding: 0px 0px 0px 5px;
+  margin-bottom: 5px;
+}
+.title a {
+  color: var(--dk);
+  font-size: 24px;
+}
+.work-item {
+  background-color: var(--fg);
+}
+.warn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #nav {
-  height: 75px;
   box-sizing: border-box;
   display: flex;
-  align-content: center;
-  /* justify-items: center; */
+
+  align-items: center;
   justify-content: space-between;
   background-color: var(--ctrst);
-  padding: 10px 20px 10px 10px;
+  padding: 10px 0px 10px 10px;
   border-radius: 5px;
 }
-
+#brand {
+  margin: 0;
+}
 #sub-brand {
   cursor: pointer;
   font-family: "Permanent Marker", cursive;

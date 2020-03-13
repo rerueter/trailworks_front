@@ -3,7 +3,7 @@ import axios from "axios";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import "./WorkDetail.css";
-import { Segment, Button, Divider, Header } from "semantic-ui-react";
+import { Segment, Button, Divider, Header, Icon } from "semantic-ui-react";
 import "react-semantic-ui-datepickers/dist/react-semantic-ui-datepickers.css";
 import WorkUpdate from "./WorkUpdate/WorkUpdate";
 import WorkDelete from "./WorkDelete/WorkDelete";
@@ -89,15 +89,16 @@ class WorkDetail extends React.Component {
       this.state.work && (
         <>
           <Segment>
-            <Header as="h1">
+            <Header className="title" as="h1">
               <Header.Content>{this.state.work.title}</Header.Content>
             </Header>
             <Divider />
-            <div className="date-location-time">
+            <div>
               <h3>
+                Date: {"  "}
                 <Moment format="MM/DD/YYYY">{this.state.work.date}</Moment>
               </h3>
-              <h3>Meet at {this.state.work.location}</h3>
+              <h3>Meet at: {this.state.work.location}</h3>
               <h3>Time: {this.state.work.time}</h3>
             </div>
             <h3>Description:</h3>
@@ -118,7 +119,9 @@ class WorkDetail extends React.Component {
               />
             )}
 
-            {!this.state.editing && !this.state.deleting ? (
+            {!this.state.editing &&
+            !this.state.deleting &&
+            localStorage.getItem("uid") ? (
               this.state.work.attendees.includes(
                 localStorage.getItem("uid")
               ) ? (
@@ -146,6 +149,12 @@ class WorkDetail extends React.Component {
                 <Button onClick={this.handleDelete}>Delete Work</Button>
               </Button.Group>
             ) : null}
+            {!localStorage.getItem("uid") && (
+              <div className="warn">
+                <Icon name="warning sign" />
+                <p>You must be logged in to join trailwork projects.</p>
+              </div>
+            )}
           </Segment>
           {this.state.work.creator === localStorage.getItem("uid") && (
             <WorkAttendees id={this.state.work._id} />
