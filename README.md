@@ -1,68 +1,143 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trailworks connects **organizers** of trailwork days to **volunteers** and makes scheduling and signing up for events easy.
 
-## Available Scripts
+It also functions as an emergency contact and medical information resource for organizers in the event of accidents. 
 
-In the project directory, you can run:
+yellow text indicates stretch / uncertain features
 
-### `npm start`
+## User Stories
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Creator
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+A creator will be able to create, edit and delete trailwork days that others can sign up for.  
 
-### `npm test`
+A trailwork day will contain information about location, date, time, duration and description of the work to be done.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A creator will also be able to view detailed medical and emergency information for the volunteers signed up for their event.
 
-### `npm run build`
+When a trailwork day is complete, a creator will be able to mark it complete, which will increment a counter for each attending volunteer. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A creator will be able to see a list of their events that are complete.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Volunteer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A volunteer will be able to create and edit their profile.
 
-### `npm run eject`
+A volunteers profile will contain a list of upcoming work they have signed up for. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A volunteer will be able to browse a list of upcoming trailwork days.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A volunteer will be able to sign up for trailwork, or cancel their commitment
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A volunteer will be able to see a count of volunteers attending the trailwork, but no personal information about other volunteers. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+A volunteer will be able to see how many events a work day's creator has completed.
 
-## Learn More
+A volunteer will be able to see a list of events they have participated in.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Trailwork
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Probably too much, but:
+Directions to workday - google maps integration? maybe just link out to [maps.google.com](http://maps.google.com)? Ask.
 
-### Code Splitting
+Image uploading (directions button)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Transitional / Confirmation Modals
 
-### Analyzing the Bundle Size
+## Technologies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- react
+- node
+- express
+- mongoDB
+- mongoose
+- Semantic UI React (?)
+- some kind of picture upload
 
-### Making a Progressive Web App
+## Models
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### user:
 
-### Advanced Configuration
+- name
+- profile pic
+- tel
+- email
+- pw
+- ECN
+- EMI
+- permission level
+- works created (ref?)
+- works attended (count)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### work:
 
-### Deployment
+- creator (ref)
+- image
+- title
+- description
+- location
+- date
+- time
+- [workers] (not sure best relationship here)
+- incomplete / complete status
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Components
 
-### `npm run build` fails to minify
+### Nav
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- changes depending on context / maybe user type?
+    - !session: site title, login / signup
+    - session: profile / logout
+    - foreman view: event title / profile
+        - event title links to event detail
+
+### Gallery
+
+- responsible for rendering lists of work days or users
+- generated items will have click-through but container itself will have little logic
+
+### Profile
+
+- maybe the same for users and events, maybe slightly different
+- user permission status will lead to different information displayed on events
+    - volunteers will be able to sign up or cancel their commitment to an event
+    - creators will be able to change the event status to complete or delete the event (only their own events)
+
+## Milestones
+
+### Back End
+
+- build Node / Express server
+- models
+- seed Information for DB - I want to work with live data from day 1.
+- full CRUD api routes on models
+- sessions
+- auth?
+- update DB with form data
+
+## Front End
+
+- React Server / Hello World
+- Components
+    - nav component
+    - gallery component
+    - profile component
+- display information in components via axios calls
+- make axios calls with form data
+    - allow creators to make events
+    - allow users to add themselves to event
+
+## MVP
+
+- [x]  users can sign up and log in
+- [x]  users can create update delete trail events
+- [x]  sign up for events as volunteers
+- [x]  view EMC only if event creator.
+
+## Things I'd like to complete in the future:
+
+- profile edit
+- work / user profile images
+- make attendees update dynamically on join
+- get working links out to google maps for work locations
+- add views for trailworks users have signed up for, created, and completed in Profile
+- handle User works completed tallying
