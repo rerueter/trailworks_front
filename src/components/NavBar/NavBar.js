@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { Segment, Button, Icon, Header } from "semantic-ui-react";
+import { Button, Header } from "semantic-ui-react";
 
 const NavBar = props => {
   const toProfile = () => {
